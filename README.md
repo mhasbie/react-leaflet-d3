@@ -71,7 +71,7 @@ Option          | Type      | Default | Description
 `radiusScaleExtent`   | `array`   | `[ 1, undefined ]`    | This is the same exact configuration option as `colorScaleExtent`, only applied to the radius extent.
 `colorRange`   | `array`   | `[ '#f7fbff', '#08306b' ]`    | Sets the range of the color scale used to fill the hexbins on the layer.
 `radiusRange`   | `array`   | `[ 4, 12 ]`    | Sets the range of the radius scale used to size the hexbins on the layer.
-`pointerEvents`   `string`     | `all`    | This value is passed directly to an element-level css style for `pointer-events`. You should only modify this config option if you want to change the mouse event behavior on hexbins. This will modify when the events are propagated based on the visibility state and/or part of the hexbin being hovered.
+`pointerEvents` |  `string`     | `all`    | This value is passed directly to an element-level css style for `pointer-events`. You should only modify this config option if you want to change the mouse event behavior on hexbins. This will modify when the events are propagated based on the visibility state and/or part of the hexbin being hovered.
 
 
 ### PingLayer
