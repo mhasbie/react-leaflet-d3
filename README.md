@@ -108,7 +108,7 @@ Option          | Type      | Default | Description
 
 [Ping API](https://github.com/Asymmetrik/leaflet-d3#lpinglayer)
 
-##### pingLayer.ping(coordinates, 'cssClassName') - [doc](https://github.com/Asymmetrik/leaflet-d3#pinglayerpingvalue-)
+##### pingLayer.ping(coordinates, cssClassName) - [doc](https://github.com/Asymmetrik/leaflet-d3#pinglayerpingvalue-)
 
 Submit a ping to the layer. The default data schema for the ping layer is:
 
