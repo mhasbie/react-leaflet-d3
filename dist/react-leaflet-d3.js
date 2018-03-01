@@ -59,20 +59,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.HexbinLayer = exports.PingLayer = undefined;
 
 	var _PingLayer = __webpack_require__(1);
 
-	var _PingLayer2 = _interopRequireDefault(_PingLayer);
+	Object.defineProperty(exports, 'PingLayer', {
+	  enumerable: true,
+	  get: function get() {
+	    return _PingLayer.PingLayer;
+	  }
+	});
 
 	var _HexbinLayer = __webpack_require__(78);
 
-	var _HexbinLayer2 = _interopRequireDefault(_HexbinLayer);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.PingLayer = _PingLayer2.default;
-	exports.HexbinLayer = _HexbinLayer2.default;
+	Object.defineProperty(exports, 'HexbinLayer', {
+	  enumerable: true,
+	  get: function get() {
+	    return _HexbinLayer.HexbinLayer;
+	  }
+	});
 
 /***/ }),
 /* 1 */
