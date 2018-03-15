@@ -16,4 +16,11 @@ export default class HexbinLayer extends MapLayer {
 		this.leafletElement.addTo(layerContainer);
 		if (coordinates.length) this.leafletElement.data(coordinates);
 	}
+
+	componentWillUnmount() {
+		const { layerContainer, map } = this.context;
+		this.leafletElement.data(null);
+		map.removeLayer(this.leafletElement);
+		layerContainer.removeLayer(this.leafletElement);
+	}
 }

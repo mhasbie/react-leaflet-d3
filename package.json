@@ -40,6 +40,7 @@
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.1.18",
     "babel-register": "^6.26.0",
+    "d3": "4.10.0",
     "eslint": "^3.8.1",
     "eslint-plugin-react": "^6.4.1",
     "leaflet": "^1.0.2",
@@ -48,10 +49,9 @@
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
     "react-leaflet": "^1.0.1",
-    "d3": "^4.10.0",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.12.1",
-    "webpack-css-loaders": "^1.0.0"
+    "webpack-css-loaders": "^1.0.0",
+    "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
     "d3-hexbin": "^0.2.2",

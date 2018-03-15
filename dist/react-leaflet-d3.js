@@ -18228,6 +18228,17 @@ return /******/ (function(modules) { // webpackBootstrap
 				this.leafletElement.addTo(layerContainer);
 				if (coordinates.length) this.leafletElement.data(coordinates);
 			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				var _context = this.context,
+				    layerContainer = _context.layerContainer,
+				    map = _context.map;
+
+				this.leafletElement.data(null);
+				map.removeLayer(this.leafletElement);
+				layerContainer.removeLayer(this.leafletElement);
+			}
 		}]);
 
 		return HexbinLayer;
