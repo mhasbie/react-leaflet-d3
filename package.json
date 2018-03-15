@@ -21,7 +21,9 @@
     "react-leaflet",
     "leaflet-d3",
     "d3",
-    "react-leaflet-d3"
+    "react-leaflet-d3",
+	"hexbin",
+	"ping"
   ],
   "author": "M. Hasbie",
   "license": "MIT",
