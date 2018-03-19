@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-d3",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "React wrapper of @asymmetrik/leaflet-d3. Leaflet D3 Provides a collection of D3.js based visualization plugins for Leaflet.",
   "main": "dist/react-leaflet-d3.min.js",
   "scripts": {
@@ -22,8 +22,8 @@
     "leaflet-d3",
     "d3",
     "react-leaflet-d3",
-	"hexbin",
-	"ping"
+    "hexbin",
+    "ping"
   ],
   "author": "M. Hasbie",
   "license": "MIT",
