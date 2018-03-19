@@ -11,7 +11,7 @@ export default class HexbinLayer extends MapLayer {
 	componentDidMount() {
 		const { layerContainer } = this.context;
 		const { data } = this.props;
-		const points = data.features.filter((feat) => feat.geometry.type === 'Point');
+		const points = data.features.filter((feat) => feat.hasOwnProperty('geometry') && feat.geometry && typeof feat.geometry === 'object' && feat.geometry.hasOwnProperty('type') && feat.geometry.type === 'Point');
 		const coordinates = points.map(feat => feat.geometry.coordinates);
 		this.leafletElement.addTo(layerContainer);
 		if (coordinates.length) this.leafletElement.data(coordinates);
