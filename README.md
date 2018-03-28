@@ -1,5 +1,14 @@
 # react-leaflet-d3
 
+[![travis build](https://img.shields.io/travis/mhasbie/react-leaflet-d3.svg?style=plastic)](https://travis-ci.org/mhasbie/react-leaflet-d3)
+[![version](https://img.shields.io/npm/v/react-leaflet-d3.svg?style=plastic)](http://npm.im/react-leaflet-d3)
+[![MIT License](https://img.shields.io/npm/l/react-leaflet-d3.svg?style=plastic)](http://opensource.org/licenses/MIT)
+[![dependencies](https://img.shields.io/david/mhasbie/react-leaflet-d3.svg?style=plastic)](https://david-dm.org/mhasbie/react-leaflet-d3)
+[![peer dependencies](https://img.shields.io/david/mhasbie/react-leaflet-d3.svg?style=plastic)](https://david-dm.org/mhasbie/react-leaflet-d3?type=peer)
+[![downloads](https://img.shields.io/npm/dt/react-leaflet-deflate.svg?style=plastic)](http://npm-stat.com/charts.html?package=react-leaflet-deflate&from=2018-01-01)
+[![issues](https://img.shields.io/github/issues/mhasbie/react-leaflet-deflate.svg?style=plastic)](https://github.com/mhasbie/react-leaflet-d3/issues)
+
+
 React wrapper of [@asymmetrik/leaflet-d3](https://github.com/Asymmetrik/leaflet-d3)
 for [react-leaflet](https://github.com/PaulLeCam/react-leaflet).
 
