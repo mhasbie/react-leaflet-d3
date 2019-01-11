@@ -1,6 +1,7 @@
 import { MapLayer } from 'react-leaflet';
 import L from 'leaflet';
 import '@asymmetrik/leaflet-d3';
+import './ping.css';
 
 export default class PingLayer extends MapLayer {
 	createLeafletElement(props) {
@@ -8,8 +9,7 @@ export default class PingLayer extends MapLayer {
 	}
 
 	componentDidMount() {
-		const { layerContainer } = this.context;
-		this.leafletElement.addTo(layerContainer);
+		super.componentDidMount();
 	}
 
 	ping(coordinates, customClass) {

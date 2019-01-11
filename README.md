@@ -5,6 +5,7 @@
 [![MIT License](https://img.shields.io/npm/l/react-leaflet-d3.svg?style=plastic)](http://opensource.org/licenses/MIT)
 [![dependencies](https://img.shields.io/david/mhasbie/react-leaflet-d3.svg?style=plastic)](https://david-dm.org/mhasbie/react-leaflet-d3)
 [![peer dependencies](https://img.shields.io/david/peer/mhasbie/react-leaflet-d3.svg?style=plastic)](https://david-dm.org/mhasbie/react-leaflet-d3?type=peer)
+[![react-leaflet compatibility](https://img.shields.io/npm/dependency-version/react-leaflet-d3/peer/react-leaflet.svg?style=plastic)](https://github.com/mhasbie/react-leaflet-d3)
 [![downloads](https://img.shields.io/npm/dt/react-leaflet-d3.svg?style=plastic)](http://npm-stat.com/charts.html?package=react-leaflet-d3&from=2018-01-01)
 [![issues](https://img.shields.io/github/issues/mhasbie/react-leaflet-d3.svg?style=plastic)](https://github.com/mhasbie/react-leaflet-d3/issues)
 
@@ -14,11 +15,15 @@ for [react-leaflet](https://github.com/PaulLeCam/react-leaflet).
 
 Leaflet D3 Provides a collection of D3.js based visualization plugins for Leaflet.
 
-Current visualization supported:
-1. Hexbins - [Demo](https://jsfiddle.net/m_hasbie/g539zzee/)
-1. Pings - [Demo](https://jsfiddle.net/m_hasbie/04nzqhu4/)
 
-*Tested with Leaflet 1.0.3 and React-Leaflet 1.3.1*
+#### Demo
+
+| Visualization	| Demo react-leaflet v1									| Demo react-leaflet v2 								|
+| ---			| ---													| ---													|
+| Hexbins		| [`CodePen`](https://codepen.io/m_hasbie/pen/yGQgoV)	| [`CodePen`](https://codepen.io/m_hasbie/pen/wRQgpB)	|
+| Pings			| [`CodePen`](https://codepen.io/m_hasbie/pen/oJQBpP)	| [`CodePen`](https://codepen.io/m_hasbie/pen/zyMNJR)	|
+
+*Tested with Leaflet 1.3.4 and React-Leaflet 1.9.1, React-Leaflet 2.1.4*
 
 
 ## Installation
@@ -29,23 +34,19 @@ Current visualization supported:
 npm install --save react-leaflet-d3
 ```
 
-`react-leaflet-d3` requires `d3` as [`peerDependency`](https://docs.npmjs.com/files/package.json#peerdependencies)
+`react-leaflet-d3` requires `d3` and `d3-hexbin` as [`peerDependency`](https://docs.npmjs.com/files/package.json#peerdependencies)
 
 (React, PropTypes, Leaflet, react-leaflet also should be installed)
 ```bash
-npm install --save d3
+npm install --save d3 d3-hexbin
 ```
 
-Include hexbin.css and ping.css stylesheet from the `src` folder to your project ([or create your own!](https://github.com/Asymmetrik/leaflet-d3#styling-1)).
+[Customize css](https://github.com/Asymmetrik/leaflet-d3#styling-1)
 
-```html
-<link rel="stylesheet" href="hexbin.css">
-<link rel="stylesheet" href="ping.css">
-```
 
 ## Usage example
 
-### HexbinLayer
+### HexbinLayer (with react-leaflet v1)
 
 ```javascript
 import { Map, TileLayer } from 'react-leaflet';
@@ -68,6 +69,31 @@ const options = {
 </Map>
 ```
 
+### HexbinLayer (with react-leaflet v2)
+
+```javascript
+import { Map, TileLayer, withLeaflet } from 'react-leaflet';
+import { HexbinLayer } from 'react-leaflet-d3';
+const WrappedHexbinLayer = withLeaflet(HexbinLayer);
+
+const options = {
+	colorScaleExtent: [ 1, undefined ],
+	radiusScaleExtent: [ 1, undefined ],
+	colorRange: [ '#f7fbff', '#ff0000' ],
+	radiusRange: [ 5, 12 ],
+};
+
+<Map center={[2.935403, 101.448205]} zoom={10}>
+  <TileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  />
+
+  {/* Use <WrappedHexbinLayer> where you would have used <HexbinLayer>. */}
+  <WrappedHexbinLayer data={geoJsonData} {...options} />
+</Map>
+```
+
 #### Options [Hexbin options](https://github.com/Asymmetrik/leaflet-d3#options)
 
 Option          | Type      | Default | Description
@@ -83,7 +109,7 @@ Option          | Type      | Default | Description
 `pointerEvents` |  `string`     | `all`    | This value is passed directly to an element-level css style for `pointer-events`. You should only modify this config option if you want to change the mouse event behavior on hexbins. This will modify when the events are propagated based on the visibility state and/or part of the hexbin being hovered.
 
 
-### PingLayer
+### PingLayer (with react-leaflet v1)
 
 ```javascript
 import { Map, TileLayer } from 'react-leaflet';
@@ -100,6 +126,29 @@ ping() {
   />
 
   <PingLayer ref={(ref) => { this.pingLayer = ref; }} radiusRange={[3, 50]} />
+</Map>
+```
+
+
+### PingLayer (with react-leaflet v2)
+
+```javascript
+import { Map, TileLayer, withLeaflet } from 'react-leaflet';
+import { PingLayer } from 'react-leaflet-d3';
+const WrappedPingLayer = withLeaflet(PingLayer);
+
+ping() {
+	this.pingLayer.ping([101.448205, 2.935403], 'myCustomCssClass');
+}
+
+<Map center={[2.935403, 101.448205]} zoom={10}>
+  <TileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  />
+
+  {/* Use <WrappedPingLayer> where you would have used <PingLayer>. */}
+  <WrappedPingLayer ref={(ref) => { this.pingLayer = ref; }} radiusRange={[3, 50]} />
 </Map>
 ```
 
