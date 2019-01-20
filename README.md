@@ -20,8 +20,8 @@ Leaflet D3 Provides a collection of D3.js based visualization plugins for Leafle
 
 | Visualization	| Demo react-leaflet v1									| Demo react-leaflet v2 								|
 | ---			| ---													| ---													|
-| Hexbins		| [`CodePen`](https://codepen.io/m_hasbie/pen/yGQgoV)	| [`CodePen`](https://codepen.io/m_hasbie/pen/wRQgpB)	|
-| Pings			| [`CodePen`](https://codepen.io/m_hasbie/pen/oJQBpP)	| [`CodePen`](https://codepen.io/m_hasbie/pen/zyMNJR)	|
+| Hexbins		| [`CodePen`](https://codepen.io/m_hasbie/full/yGQgoV)	| [`CodePen`](https://codepen.io/m_hasbie/full/wRQgpB)	|
+| Pings			| [`CodePen`](https://codepen.io/m_hasbie/full/oJQBpP)	| [`CodePen`](https://codepen.io/m_hasbie/full/zyMNJR)	|
 
 *Tested with Leaflet 1.3.4 and React-Leaflet 1.9.1, React-Leaflet 2.1.4*
 
